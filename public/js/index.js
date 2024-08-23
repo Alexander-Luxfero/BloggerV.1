@@ -12,17 +12,4 @@ const quill = new Quill('#editor', {
     theme: 'snow', // or 'bubble'
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const title = document.getElementById('title');
-    const text = document.getElementById('main-text');
-
-    title.addEventListener('input', function() {
-      this.style.height = 'auto'; // Reset the height to auto to shrink the input
-      this.style.height = (this.scrollHeight) + 'px'; // Set the height to the scroll height
-    });
-
-    text.addEventListener('input', function() {
-      this.style.height = 'auto'; // Reset the height to auto to shrink the input
-      this.style.height = (this.scrollHeight) + 'px'; // Set the height to the scroll height
-    });
-  });
+  
