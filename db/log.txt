@@ -1,0 +1,10 @@
+[
+  {
+    "id": 2,
+    "user_id": 1,
+    "title": "TITLE",
+    "main_text": "This is my first post and so on and on.",
+    "views": null,
+    "likes": null
+  }
+]

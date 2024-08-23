@@ -1,0 +1,34 @@
+
+<%- include('partials/header.ejs', { title: username, isLoggedIn: isLoggedIn }) %>
+
+<div id="editor-container" style="height: 50%; width: 60%; margin: 0 20%;">
+    <form action="/create_post" method="post" style="display: flex; flex-direction: column;">
+        <input name="title" type="text" placeholder="title" class="editor-element">
+        <input name="main_text" type="text" placeholder="text" class="editor-element">
+        <button type="submit" class="btn btn-primary py-2" style="max-width: 300px; margin: 0 auto;">Submit</button>
+    </form>
+</div>
+    <!-- Подключение скриптов Quill 
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        const quill = new Quill('#editor', {
+            modules: {
+            toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['image', 'code-block'],
+                ],
+            },
+            placeholder: 'Compose an epic...',
+            theme: 'snow', // or 'bubble'
+        });
+        
+        document.querySelector('form').onsubmit = function() {
+            var content = document.querySelector('input[name=content]');
+            content.value = quill.root.innerHTML;
+        };
+    </script>
+    Отображаеться не корректно!!!
+-->
+
+<%- include("partials/footer.ejs")  %>

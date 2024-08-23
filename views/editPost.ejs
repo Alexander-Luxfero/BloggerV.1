@@ -1,0 +1,47 @@
+<%- include('partials/header.ejs', { title: username, isLoggedIn: isLoggedIn }) %>
+
+<div class="userInfoContainer">
+    <img src="../img/userImages/Saitama.png" class="userImage">
+    <h5><%= username %></h5>
+</div>
+
+<div class="container editor">
+    
+    <form class="edit" action="/update/<%= postId %>" method="POST">
+        <input type="hidden" name="id" value="<%= row.id %>">
+        <input type="hidden" name="user_id" value="<%= row.user_id %>">
+        <div class="form-title">
+            <label for="title"><h3>Title</h3></label>
+            <input id="title" class="form-control" type="text" name="title" value="<%= row.title %>">
+        </div>
+        <div class="form-text">
+            <label for="main_text"><h3>Main Text</h3></label>
+            <textarea id="main-text" class="form-control" name="main_text" rows="<%= Math.round(row.main_text.toString().length / 100 )%>"><%= row.main_text %></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Save Changes</button>
+    </form>
+    
+</div>
+
+<a href="/create_post" type="submit" class="add_post_plus">
+    <img type="svg" src="/icons/add_post.svg" alt="+" width="100%" height="100%">
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const title = document.getElementById('title');
+    const text = document.getElementById('main-text');
+
+    title.addEventListener('input', function() {
+      this.style.height = 'auto'; // Reset the height to auto to shrink the input
+      this.style.height = (this.scrollHeight) + 'px'; // Set the height to the scroll height
+    });
+
+    text.addEventListener('input', function() {
+      this.style.height = 'auto'; // Reset the height to auto to shrink the input
+      this.style.height = (this.scrollHeight) + 'px'; // Set the height to the scroll height
+    });
+  });
+</script>
+
+<%- include("partials/footer.ejs") %>
