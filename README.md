@@ -1,3 +1,5 @@
+## Basik version of simple Blogger Web Application 
+
 1.0.0
 This website in first version propose users:
     1. Simple creating profile and logon/loguot into it
